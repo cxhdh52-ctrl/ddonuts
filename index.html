@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dunkin' $500 Gift Card</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: #ffffff;
+      color: #1a1a1a;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px 120px;
+    }
+
+    .logo {
+      margin-bottom: 32px;
+      text-align: center;
+    }
+
+    .logo-img {
+      height: 56px;
+      width: auto;
+    }
+
+    .logo-text {
+      font-size: 42px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      background: linear-gradient(90deg, #FF671F 0%, #DA1884 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    h1 {
+      font-size: 28px;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 8px;
+      color: #111;
+    }
+
+    .subtitle {
+      font-size: 16px;
+      color: #6b7280;
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .card {
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 16px;
+      padding: 24px;
+      width: 100%;
+      max-width: 420px;
+      margin-bottom: 20px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
+
+    .card-title {
+      font-size: 16px;
+      font-weight: 600;
+      color: #FF671F;
+      margin-bottom: 20px;
+    }
+
+    .step {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .step:last-child {
+      margin-bottom: 0;
+    }
+
+    .check {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      border: 2px solid #FF671F;
+      color: #FF671F;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .step-content h3 {
+      font-size: 15px;
+      font-weight: 600;
+      color: #111;
+      margin-bottom: 2px;
+    }
+
+    .step-content p {
+      font-size: 13px;
+      color: #6b7280;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid #f3f4f6;
+      padding: 14px 0;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .faq-item:first-child {
+      padding-top: 0;
+    }
+
+    .faq-question {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      font-size: 15px;
+      font-weight: 500;
+      color: #111;
+      background: none;
+      border: none;
+      width: 100%;
+      text-align: left;
+      padding: 0;
+      font-family: inherit;
+    }
+
+    .faq-question svg {
+      width: 18px;
+      height: 18px;
+      color: #9ca3af;
+      transition: transform 0.2s;
+    }
+
+    .faq-item.open .faq-question svg {
+      transform: rotate(180deg);
+    }
+
+    .faq-answer {
+      display: none;
+      font-size: 14px;
+      color: #6b7280;
+      line-height: 1.5;
+      margin-top: 10px;
+      padding-right: 24px;
+    }
+
+    .faq-item.open .faq-answer {
+      display: block;
+    }
+
+    .trust {
+      font-size: 12px;
+      color: #9ca3af;
+      text-align: center;
+      margin-top: 8px;
+      margin-bottom: 4px;
+    }
+
+    .copyright {
+      font-size: 12px;
+      color: #9ca3af;
+      text-align: center;
+    }
+
+    .claim-btn {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #FF671F;
+      color: white;
+      font-size: 17px;
+      font-weight: 600;
+      padding: 16px 64px;
+      border-radius: 50px;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 20px rgba(255, 103, 31, 0.4);
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+      z-index: 100;
+      font-family: inherit;
+    }
+
+    .claim-btn:hover {
+      background: #e55a1a;
+      transform: translateX(-50%) scale(1.02);
+    }
+
+    .claim-btn:active {
+      transform: translateX(-50%) scale(0.98);
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 24px;
+      }
+      .card {
+        padding: 20px;
+      }
+      .claim-btn {
+        width: calc(100% - 40px);
+        text-align: center;
+        padding: 16px 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="logo">
+    <div class="logo-text">DUNKIN'</div>
+  </div>
+
+  <h1>Dunkin' $500 Gift Card</h1>
+  <p class="subtitle">Complete the steps below to unlock your reward</p>
+
+  <div class="card">
+    <div class="card-title">Quick Start Guide</div>
+    
+    <div class="step">
+      <div class="check">✓</div>
+      <div class="step-content">
+        <h3>Enter a valid email</h3>
+        <p>For confirmation and updates</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="check">✓</div>
+      <div class="step-content">
+        <h3>Complete 4–5 deals</h3>
+        <p>More deals, more rewards</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="check">✓</div>
+      <div class="step-content">
+        <h3>Must be 18 years or older</h3>
+        <p>Required to participate</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Common Questions</div>
+
+    <div class="faq-item" id="faq1">
+      <button class="faq-question" onclick="toggleFaq('faq1')">
+        How long do the deals take?
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+      </button>
+      <div class="faq-answer">
+        Most deals take just a few minutes to complete. Some may require a short trial or survey. You can finish the required 4–5 deals in under 15–20 minutes in most cases.
+      </div>
+    </div>
+
+    <div class="faq-item" id="faq2">
+      <button class="faq-question" onclick="toggleFaq('faq2')">
+        What kind of deals are included?
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+      </button>
+      <div class="faq-answer">
+        Deals typically include free app downloads, short surveys, product trials, or newsletter sign-ups from trusted partners. No credit card is required for the free offers.
+      </div>
+    </div>
+  </div>
+
+  <p class="trust">SSL Secured • Encrypted • Verified • 100% Safe</p>
+  <p class="copyright">© 2026</p>
+
+  <a href="https://linkthem.net/aff_c?offer_id=1765&aff_id=157440" class="claim-btn" target="_blank" rel="noopener">Claim Now</a>
+
+  <script>
+    function toggleFaq(id) {
+      const item = document.getElementById(id);
+      item.classList.toggle('open');
+    }
+  </script>
+</body>
+</html>
